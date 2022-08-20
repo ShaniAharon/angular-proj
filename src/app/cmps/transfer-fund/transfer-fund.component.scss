@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.transferfund-container {
+  flex-direction: column;
+
+  input {
+    min-width: 0;
+    width: 5rem;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: none;
+  }
+}

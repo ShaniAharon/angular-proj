@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+  display: flex;
+}
+
+.signup-form {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        height: 300px;
+        width: 300px;
+    }
+
+    * {
+        margin: 10px;
+    }
+}

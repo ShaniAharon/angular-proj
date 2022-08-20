@@ -1,0 +1,21 @@
+<div *ngIf="contact._id" class="capitalize contactdetails-title-container">transfer history :</div>
+<div *ngIf="!contact._id" class="capitalize homepage-title-container">last transactions :</div>
+<div *ngFor="let move of user.moves">
+    <div *ngIf="contact.name===move.to" class="flex move-container">
+        <span class="date-container">{{move.at | date: 'dd.MM.yy HH:mm'}}</span>
+        <span class="capitalize">coins transfered: {{move.amount}}</span>
+    </div>
+</div>
+<div *ngIf="isTransfersMade && contact._id" class="capitalize notransfers-container">
+    no transfers have been made to this contact
+</div>
+<div *ngIf="isTransfersMade && !contact" class="capitalize notransfers-container">
+    no transfers have been made yet
+</div>
+<div *ngIf="lastTransfers && !contact._id" class="flex column homepage-container">
+    <div *ngFor="let transfer of lastTransfers" class="capitalize flex transfers-container">
+        <span>{{transfer.at | date: 'dd.MM.yy HH:mm'}}</span>
+        <span class="name-container">to: {{transfer.to}}</span>
+        <span>coins transfered: {{transfer.amount}}</span>
+    </div>
+</div>

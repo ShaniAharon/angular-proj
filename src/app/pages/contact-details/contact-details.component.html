@@ -1,0 +1,15 @@
+<section *ngIf="contact" class="contact-details">
+  <img src="https://robohash.org/{{ contact._id }}?set=set1" alt="contact" />
+  <h1>{{ contact.name }}</h1>
+  <p>Phone: {{ contact.phone }}</p>
+  <p>Email: {{ contact.email }}</p>
+  <div class="flex transfer-moves-container">
+    <transferfund [contact]="contact"></transferfund>
+    <moveslist
+      *ngIf="contact && user"
+      [contact]="contact"
+      [user]="user"
+    ></moveslist>
+  </div>
+  <button (click)="onBack()">Back</button>
+</section>

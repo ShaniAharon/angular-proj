@@ -1,0 +1,22 @@
+<ngx-charts-bar-vertical
+  [view]="[1000, 400]"
+  [results]="trades"
+  [xAxisLabel]="'USD Exchange Trade Volume'"
+  [legendTitle]="'Day'"
+  [yAxisLabel]="'Trade Volume (USD)'"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [gradient]="true"
+>
+</ngx-charts-bar-vertical>
+<ngx-charts-pie-chart
+  [results]="saleData"
+  [legend]="false"
+  [legendTitle]="'Product Sale Report'"
+  [view]="[1000, 300]"
+  [labels]="true"
+>
+</ngx-charts-pie-chart>

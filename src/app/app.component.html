@@ -1,0 +1,18 @@
+<section class="app-container">
+  <app-header></app-header>
+  <!-- <header class="container">
+    <h1 class="logo">Bitcoin</h1>
+    <div class="links">
+      <h1 (click)="toHome()">Home</h1>
+      <h1 (click)="toContacts()">Contacts</h1>
+      <h1 (click)="toStatisticPage()">Statistic</h1>
+    </div>
+  </header> -->
+  <main class="container">
+    <!-- <home-page *ngIf="currPage === 'home'"></home-page>
+    <contact-page *ngIf="currPage === 'contacts'"></contact-page>
+    <statistic-page *ngIf="currPage === 'stats'"></statistic-page> -->
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="container">BitcoinRights &copy;</footer>
+</section>
