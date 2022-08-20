@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UtilsService {
-
-  constructor() { }
+  constructor() {}
 
   public setId(): string {
-    var txt = ''
+    var txt = '';
     let length = 10;
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    const possible =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < length; i++) {
-      txt += possible.charAt(Math.floor(Math.random() * possible.length))
+      txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
-    return txt
+    return txt;
   }
 
   public store(key: string, any: any): void {
@@ -24,5 +24,8 @@ export class UtilsService {
   public load(key: string): any {
     var str = localStorage[key] || 'null';
     return JSON.parse(str);
+  }
+  public remove(key: string) {
+    localStorage.removeItem(key);
   }
 }

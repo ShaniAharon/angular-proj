@@ -2,6 +2,9 @@
   <h1>Hello {{ user.name }}!</h1>
   <h3>Coins: {{ user.coins }}</h3>
   <h3>BTC: {{ BTC$ | async }}</h3>
-  <pre>{{ user | json }}</pre>
-  <moveslist *ngIf="user" [user]="user"></moveslist>
+  <!-- <pre>{{ user | json }}</pre> -->
+  <div *ngIf="user">
+    <button (click)="logout()">logout</button>
+    <moveslist [user]="user"></moveslist>
+  </div>
 </section>

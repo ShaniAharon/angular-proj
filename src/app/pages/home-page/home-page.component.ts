@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserModel } from 'src/app/models/user.model';
 import { BitcoinService } from 'src/app/services/bitcoin.service.service';
@@ -17,7 +18,8 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private bitcoinService: BitcoinService
+    private bitcoinService: BitcoinService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -27,5 +29,10 @@ export class HomePageComponent implements OnInit {
     // gets observable object , async pipe do subscribe and unsubscribe for us
     //must do subscribe to get the value
     this.BTC$ = this.bitcoinService.getRate(this.user.coins);
+  }
+
+  logout(): void {
+    this.userService.logoutUser();
+    this.router.navigate(['/signup']);
   }
 }

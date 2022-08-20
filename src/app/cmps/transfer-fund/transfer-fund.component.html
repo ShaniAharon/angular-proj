@@ -1,10 +1,10 @@
 <div class="capitalize flex center transferfund-container">
-    transfer coins to {{contact.name}}
-    <div class="flex align-center wrap">
-        <span class="capitalize">
-            amount
-        </span>
-        <input type="number" placeholder="0" [(ngModel)]="amount">
-        <div (click)=(onTransferCoins()) class="capitalize button">transfer</div>
-    </div>
+  transfer coins to {{ contact.name }}
+  <div class="flex align-center wrap">
+    <span class="capitalize"> amount </span>
+    <input type="number" placeholder="0" [(ngModel)]="amount" />
+    <button (click)="onTransferCoins()" class="capitalize button">
+      transfer
+    </button>
+  </div>
 </div>
