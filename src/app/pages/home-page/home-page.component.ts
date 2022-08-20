@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   constructor(
     private userService: UserService,
     private bitcoinService: BitcoinService,
-    private router: Router
+    private router: Router // important for navigate opts
   ) {}
 
   ngOnInit(): void {
