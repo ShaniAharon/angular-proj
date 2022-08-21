@@ -212,7 +212,7 @@ export class ContactService {
   }
 
   setFilter(filterBy: ContactFilter) {
-    this._filterBy$.next(filterBy); //can do this and run loadContacts empty
+    this._filterBy$.next({ ...filterBy }); //can do this and run loadContacts empty
     this.loadContacts();
     // this.loadContacts(filterBy); //test
   }
