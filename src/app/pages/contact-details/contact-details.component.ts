@@ -51,6 +51,10 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('contacts');
   }
 
+  get getDate() {
+    return new Date();
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
     this.userSubscriber.unsubscribe();

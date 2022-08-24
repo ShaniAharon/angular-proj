@@ -3,6 +3,7 @@
   <h1>{{ contact.name }}</h1>
   <p>Phone: {{ contact.phone }}</p>
   <p>Email: {{ contact.email }}</p>
+  <p>{{ getDate | dateDesc }}</p>
   <div class="flex transfer-moves-container">
     <transferfund [contact]="contact"></transferfund>
     <moveslist
