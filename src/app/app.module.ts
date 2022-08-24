@@ -21,6 +21,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { TransferfundComponent } from './cmps/transfer-fund/transfer-fund.component';
 import { MoveslistComponent } from './cmps/moves-list/moves-list.component';
 import { UserMsgComponent } from './cmps/user-msg/user-msg.component';
+import { InputColorDirective } from './directives/input-color.directive';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UserMsgComponent } from './cmps/user-msg/user-msg.component';
     AppHeaderComponent,
     ContactEditPageComponent,
     UserMsgComponent,
+    InputColorDirective,
   ],
   imports: [
     BrowserModule,
