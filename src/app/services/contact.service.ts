@@ -165,8 +165,6 @@ export class ContactService {
   }
 
   public saveContact(contact: Contact) {
-    console.log('save contact', contact);
-
     return contact._id
       ? this._updateContact(contact)
       : this._addContact(contact);

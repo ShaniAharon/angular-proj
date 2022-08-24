@@ -7,20 +7,24 @@ import { ContactService } from 'src/app/services/contact.service';
 @Component({
   selector: 'contact-edit-page',
   templateUrl: './contact-edit-page.component.html',
-  styleUrls: ['./contact-edit-page.component.scss']
+  styleUrls: ['./contact-edit-page.component.scss'],
 })
 export class ContactEditPageComponent implements OnInit {
+  contact: Contact;
 
-  contact: Contact
-
-  constructor(private contactService: ContactService, private router: Router, private route: ActivatedRoute) { }
-
+  constructor(
+    private contactService: ContactService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     //with resolver
-   this.route.data.subscribe(({contact})=> {
-     this.contact = contact?._id ? contact : this.contactService.getEmptyContact() as Contact
-   })
+    this.route.data.subscribe(({ contact }) => {
+      this.contact = contact?._id
+        ? contact
+        : (this.contactService.getEmptyContact() as Contact);
+    });
 
     //no resolver way
     // this.route.params.subscribe(async({id})=> {
@@ -29,11 +33,10 @@ export class ContactEditPageComponent implements OnInit {
   }
 
   async onSaveContact() {
-    console.log('this.contact',this.contact);
-    
-     //check if need to return in contactService add and update -> return of(contact) soo it wiil work
-    await firstValueFrom(this.contactService.saveContact(this.contact), {defaultValue:null})
-    this.router.navigateByUrl('contacts')
+    //check if need to return in contactService add and update -> return of(contact) soo it wiil work
+    await firstValueFrom(this.contactService.saveContact(this.contact), {
+      defaultValue: null,
+    });
+    this.router.navigateByUrl('contacts');
   }
-
 }

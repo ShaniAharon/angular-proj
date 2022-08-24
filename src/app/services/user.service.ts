@@ -50,7 +50,6 @@ export class UserService {
   }
 
   public isAuthenticated(): boolean {
-    console.log('this._user$', this._user$);
     const user = this._user$.value;
     // return (user) ? true : false;
     return !!user;
